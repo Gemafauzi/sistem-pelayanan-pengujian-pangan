@@ -18,7 +18,8 @@ import {
 } from "@nextui-org/react";
 import { IoChevronDown } from "react-icons/io5";
 import { useState } from "react";
-import logoCiptaKarya from "../assets/logo/logo-pt-cipta-karya-pangan.png";
+import logoCiptaKarya from "@/assets/logo/pt-cipta-karya-pangan.png";
+import AuthNav from "./AuthNav";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -32,12 +33,12 @@ export default function Header() {
       name: "Jasa Analisis",
       listChild: [
         {
-          name: "Analisis",
-          link: "/analisis",
+          name: "Daftar Harga",
+          link: "/daftar-harga",
         },
         {
-          name: "Pengujian",
-          link: "/pengujian",
+          name: "Konsultasi Layanan",
+          link: "/consulting-services",
         },
       ],
     },
@@ -47,12 +48,27 @@ export default function Header() {
     },
     {
       name: "Tentang Kami",
-      link: "/about-us",
+      listChild: [
+        {
+          name: "Sejarah & Pengalaman",
+          link: "/about-us/history-experience",
+        },
+        {
+          name: "Visi & Misi",
+          link: "/about-us/vision-mission",
+        },
+        {
+          name: "Legalitas Hukum",
+          link: "/about-us/legality",
+        },
+      ],
     },
   ];
 
   return (
     <Navbar
+      isBlurred
+      isBordered
       shouldHideOnScroll
       isMenuOpen={isMenuOpen}
       onMenuOpenChange={setIsMenuOpen}
@@ -64,16 +80,18 @@ export default function Header() {
           className="sm:hidden"
         />
         <NavbarBrand>
-          <Image
-            alt="cipta karya"
-            src={logoCiptaKarya}
-            width={61.95}
-            height={60}
-          />
+          <Link href={"/"} aria-current="home-page">
+            <Image
+              alt="cipta karya"
+              src={logoCiptaKarya}
+              width={61.95}
+              className="object-contain aspect-square"
+            />
+          </Link>
         </NavbarBrand>
       </NavbarContent>
 
-      <NavbarContent className="hidden sm:flex gap-8 ml-6" justify="start">
+      <NavbarContent className="hidden gap-8 ml-6 sm:flex" justify="start">
         {navItems.map((item, index) => {
           if (!item?.listChild) {
             return (
@@ -120,6 +138,8 @@ export default function Header() {
                 {item.listChild.map((child, index) => (
                   <DropdownItem
                     key={index}
+                    as={Link}
+                    className="text-foreground"
                     href={child.link}
                     aria-current="page"
                   >
@@ -132,25 +152,7 @@ export default function Header() {
         })}
       </NavbarContent>
 
-      <NavbarContent justify="end">
-        <NavbarItem className="hidden lg:flex">
-          <Link color="foreground" href="/login">
-            Login
-          </Link>
-        </NavbarItem>
-
-        <NavbarItem>
-          <Button
-            as={Link}
-            color="default"
-            href="/register"
-            radius="sm"
-            variant="flat"
-          >
-            Sign Up
-          </Button>
-        </NavbarItem>
-      </NavbarContent>
+      <AuthNav />
 
       <NavbarMenu>
         {navItems.map((item, index) => (

@@ -1,4 +1,5 @@
 import { nextui } from "@nextui-org/react";
+import tailwindTypography from "@tailwindcss/typography";
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -12,10 +13,18 @@ export default {
       colors: {
         base: "#2B2C3E",
       },
+      container: {
+        center: true,
+        padding: "1.5rem",
+        screens: {
+          "2xl": "1280px",
+        },
+      },
     },
   },
   darkMode: "class",
   plugins: [
+    tailwindTypography,
     nextui({
       layout: {
         spacingUnit: 4, // in px

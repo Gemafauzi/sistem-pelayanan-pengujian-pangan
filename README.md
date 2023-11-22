@@ -1,8 +1,7 @@
-# React + Vite
+# Sistem Layanan Pengujian Pangan
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Dengan meningkatnya permintaan layanan pengujian, Kebutuhan akan pengujian yang akurat, efisien, dan tepat waktu telah menjadi kunci dalam menjaga kepercayaan konsumen.
 
-Currently, two official plugins are available:
+Proses pelayanan pengujian produk pangan saat ini sering kali melibatkan banyak langkah yang memakan waktu dan kurang fleksibel. terutama bagi konsumen yang jaraknya jauh dari laboratorium atau memiliki keterbatasan waktu.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Selain itu, proses manajemen data menjadi tantangan tersendiri karena belum berada dalam satu sistem untuk dikelola. Informasi dan status pengujian tidak mudah diakses konsumen. yang menyebabkan ketidakpastian dalam proses layanan.

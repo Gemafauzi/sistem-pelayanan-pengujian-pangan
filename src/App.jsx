@@ -1,16 +1,22 @@
 import { NextUIProvider } from "@nextui-org/react";
 import { useNavigate, Outlet } from "react-router-dom";
-import Header from "./components/Header";
+import Footer from "./components/layout/Footer";
+import Header from "./components/layout/Header";
+import { RootProvider } from "./libs/providers/RootProvider";
 
 export default function App() {
   const navigate = useNavigate();
+
   return (
     <NextUIProvider
       navigate={navigate}
-      className="min-h-screen light text-foreground bg-background"
+      className="flex flex-col min-h-screen light text-foreground bg-background"
     >
-      <Header />
-      <Outlet />
+      <RootProvider>
+        <Header />
+        <Outlet />
+        <Footer />
+      </RootProvider>
     </NextUIProvider>
   );
 }
