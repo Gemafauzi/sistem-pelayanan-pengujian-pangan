@@ -8,7 +8,7 @@ import {
   TableHeader,
   TableRow,
 } from "@nextui-org/react";
-import React, { useCallback } from "react";
+import { useCallback } from "react";
 
 const columns = [
   {
