@@ -34,7 +34,7 @@ export default function Header() {
       listChild: [
         {
           name: "Daftar Harga",
-          link: "/daftar-harga",
+          link: "/price-list",
         },
         {
           name: "Konsultasi Layanan",

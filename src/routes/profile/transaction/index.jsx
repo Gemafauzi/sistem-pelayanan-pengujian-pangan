@@ -7,8 +7,9 @@ import {
   TableColumn,
   TableHeader,
   TableRow,
+  Pagination,
 } from "@nextui-org/react";
-import { useCallback } from "react";
+import { useCallback, useMemo, useState } from "react";
 
 const columns = [
   {
@@ -38,6 +39,78 @@ const columns = [
 ];
 
 const dataTransactions = [
+  {
+    id: 1,
+    no: "U-0001",
+    nameService: "John",
+    statusPay: "Sudah Dibayar",
+    price: 150000,
+    statusService: "Diterima",
+  },
+  {
+    id: 1,
+    no: "U-0001",
+    nameService: "John",
+    statusPay: "Sudah Dibayar",
+    price: 150000,
+    statusService: "Diterima",
+  },
+  {
+    id: 1,
+    no: "U-0001",
+    nameService: "John",
+    statusPay: "Sudah Dibayar",
+    price: 150000,
+    statusService: "Diterima",
+  },
+  {
+    id: 1,
+    no: "U-0001",
+    nameService: "John",
+    statusPay: "Sudah Dibayar",
+    price: 150000,
+    statusService: "Diterima",
+  },
+  {
+    id: 1,
+    no: "U-0001",
+    nameService: "John",
+    statusPay: "Sudah Dibayar",
+    price: 150000,
+    statusService: "Diterima",
+  },
+  {
+    id: 1,
+    no: "U-0001",
+    nameService: "John",
+    statusPay: "Sudah Dibayar",
+    price: 150000,
+    statusService: "Diterima",
+  },
+  {
+    id: 1,
+    no: "U-0001",
+    nameService: "John",
+    statusPay: "Sudah Dibayar",
+    price: 150000,
+    statusService: "Diterima",
+  },
+  {
+    id: 1,
+    no: "U-0001",
+    nameService: "John",
+    statusPay: "Sudah Dibayar",
+    price: 150000,
+    statusService: "Diterima",
+  },
+  {
+    id: 1,
+    no: "U-0001",
+    nameService: "John",
+    statusPay: "Sudah Dibayar",
+    price: 150000,
+    statusService: "Diterima",
+  },
   {
     id: 1,
     no: "U-0001",
@@ -89,6 +162,18 @@ const dataTransactions = [
 ];
 
 export default function ProfileTransaction() {
+  const [page, setPage] = useState(1);
+  const rowsPerPage = 5;
+
+  const pages = Math.ceil(dataTransactions.length / rowsPerPage);
+
+  const items = useMemo(() => {
+    const start = (page - 1) * rowsPerPage;
+    const end = start + rowsPerPage;
+
+    return dataTransactions.slice(start, end);
+  }, [page, dataTransactions]);
+
   const renderCell = useCallback((item, columnKey) => {
     const cellValue = item[columnKey];
 
@@ -119,7 +204,20 @@ export default function ProfileTransaction() {
       <h1 className="text-3xl font-semibold text-center">Transaksi Saya</h1>
 
       <Table
+        isHeaderSticky
         aria-label="Table Transactions"
+        bottomContent={
+          <div className="flex justify-center w-full">
+            <Pagination
+              isCompact
+              showControls
+              showShadow
+              page={page}
+              total={pages}
+              onChange={(page) => setPage(page)}
+            />
+          </div>
+        }
         classNames={{
           wrapper: "rounded-md",
         }}
@@ -136,7 +234,7 @@ export default function ProfileTransaction() {
           )}
         </TableHeader>
 
-        <TableBody items={dataTransactions}>
+        <TableBody emptyContent={"Belum ada transaksi."} items={items}>
           {(item) => (
             <TableRow key={item.id}>
               {(columnKey) => (

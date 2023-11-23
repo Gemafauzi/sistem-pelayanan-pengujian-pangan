@@ -20,6 +20,8 @@ import AboutUs from "./routes/about-us";
 import AboutUsHistoryExperience from "./routes/about-us/history-experience";
 import AboutUsLegality from "./routes/about-us/legality";
 import AboutUsVisionMission from "./routes/about-us/vision-mission";
+import PriceList from "./routes/price-list";
+import DetailService from "./routes/services/detail-service";
 
 const router = createBrowserRouter([
   {
@@ -31,8 +33,20 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
+        path: "price-list",
+        element: <PriceList />,
+      },
+      {
         path: "consulting-services",
         element: <ConsultingServices />,
+      },
+      {
+        path: "services/:slug",
+        element: <DetailService />,
+      },
+      {
+        path: "services/:slug/form",
+        element: <div>form service</div>,
       },
       {
         path: "about-us",

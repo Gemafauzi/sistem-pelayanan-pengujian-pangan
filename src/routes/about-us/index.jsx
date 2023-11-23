@@ -5,7 +5,7 @@ import { Outlet } from "react-router-dom";
 
 export default function AboutUs() {
   return (
-    <main className="container flex flex-col justify-center gap-12 py-20 grow">
+    <main className="container flex flex-col justify-center gap-16 py-20 grow">
       <section className="flex flex-col items-center justify-center gap-4 text-center">
         <div className="flex items-center gap-4">
           <Image

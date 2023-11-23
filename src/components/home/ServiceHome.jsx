@@ -6,37 +6,37 @@ const dummyLayanan = [
     name: "Uji Nutrisi",
     imgUrl:
       "https://images.unsplash.com/photo-1695653423034-d15c9f3d1328?q=80&w=1742&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    link: "/service/uji-nutrisi",
+    slug: "uji-nutrisi",
   },
   {
     name: "Uji Nutrisi",
     imgUrl:
       "https://images.unsplash.com/photo-1695653423034-d15c9f3d1328?q=80&w=1742&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    link: "/service/uji-nutrisi",
+    slug: "uji-nutrisi",
   },
   {
     name: "Uji Nutrisi",
     imgUrl:
       "https://images.unsplash.com/photo-1695653423034-d15c9f3d1328?q=80&w=1742&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    link: "/service/uji-nutrisi",
+    slug: "uji-nutrisi",
   },
   {
     name: "Uji Nutrisi",
     imgUrl:
       "https://images.unsplash.com/photo-1695653423034-d15c9f3d1328?q=80&w=1742&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    link: "/service/uji-nutrisi",
+    slug: "uji-nutrisi",
   },
   {
     name: "Uji Nutrisi",
     imgUrl:
       "https://images.unsplash.com/photo-1695653423034-d15c9f3d1328?q=80&w=1742&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    link: "/service/uji-nutrisi",
+    slug: "uji-nutrisi",
   },
   {
     name: "Uji Nutrisi",
     imgUrl:
       "https://images.unsplash.com/photo-1695653423034-d15c9f3d1328?q=80&w=1742&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    link: "/service/uji-nutrisi",
+    slug: "uji-nutrisi",
   },
 ];
 
@@ -51,7 +51,7 @@ const ServiceHome = () => {
         {dummyLayanan.map((service, index) => (
           <li key={index}>
             <Link
-              to={service.link}
+              to={`services/${service.slug}`}
               className="relative overflow-hidden rounded-2xl"
             >
               <Image
