@@ -15,13 +15,17 @@ import Profile from "./routes/profile";
 import ProfileTransaction from "./routes/profile/transaction";
 import ProfileDetailTransaction from "./routes/profile/transaction/detail";
 
+import PriceList from "./routes/price-list";
 import ConsultingServices from "./routes/consulting-services";
+
 import AboutUs from "./routes/about-us";
 import AboutUsHistoryExperience from "./routes/about-us/history-experience";
 import AboutUsLegality from "./routes/about-us/legality";
 import AboutUsVisionMission from "./routes/about-us/vision-mission";
-import PriceList from "./routes/price-list";
+
 import DetailService from "./routes/services/detail-service";
+import ServiceApplication from "./routes/services/service-application";
+import PaidService from "./routes/services/paid-service";
 
 const router = createBrowserRouter([
   {
@@ -46,7 +50,11 @@ const router = createBrowserRouter([
       },
       {
         path: "services/:slug/form",
-        element: <div>form service</div>,
+        element: <ServiceApplication />,
+      },
+      {
+        path: "services/:slug/paid",
+        element: <PaidService />,
       },
       {
         path: "about-us",

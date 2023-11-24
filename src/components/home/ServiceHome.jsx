@@ -49,7 +49,7 @@ const ServiceHome = () => {
 
       <ul className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
         {dummyLayanan.map((service, index) => (
-          <li key={index}>
+          <li key={index} className="relative">
             <Link
               to={`services/${service.slug}`}
               className="relative overflow-hidden rounded-2xl"
@@ -61,7 +61,7 @@ const ServiceHome = () => {
                 className="object-cover object-center w-full h-[262px] brightness-75 rounded-none"
               />
 
-              <h3 className="absolute z-10 text-2xl font-semibold text-center text-white -translate-x-1/2 bottom-5 left-1/2">
+              <h3 className="absolute z-10 w-full px-6 text-2xl font-semibold text-center text-white bottom-5">
                 {service.name}
               </h3>
             </Link>
