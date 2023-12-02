@@ -1,9 +1,93 @@
 import useForm from "@/libs/hooks/useForm";
-import { Button, Input, Select, SelectItem, Image } from "@nextui-org/react";
+import {
+  Button,
+  Input,
+  Select,
+  SelectItem,
+  Image,
+  Textarea,
+  CheckboxGroup,
+  Checkbox,
+} from "@nextui-org/react";
 import { useRef } from "react";
 import { FiPlus } from "react-icons/fi";
 import { IoMdCloseCircle } from "react-icons/io";
 import { useNavigate, useParams } from "react-router-dom";
+
+const listTestParameters = [
+  {
+    label: "Air",
+    value: "Air",
+  },
+  {
+    label: "Abu",
+    value: "Abu",
+  },
+  {
+    label: "Serat Kasar",
+    value: "Serat Kasar",
+  },
+  {
+    label: "Lemak",
+    value: "Lemak",
+  },
+  {
+    label: "Protein (N-Total)",
+    value: "Protein (N-Total)",
+  },
+  {
+    label: "Karbohidrat (Pati)",
+    value: "Karbohidrat (Pati)",
+  },
+  {
+    label: "Karbohidrat (Gula Total)",
+    value: "Karbohidrat (Gula Total)",
+  },
+  {
+    label: "Vitamin C",
+    value: "Vitamin C",
+  },
+  {
+    label: "Aktivitas Antioksidan",
+    value: "Aktivitas Antioksidan",
+  },
+  {
+    label: "Viskositas",
+    value: "Viskositas",
+  },
+  {
+    label: "Warna",
+    value: "Warna",
+  },
+  {
+    label: "Boraks",
+    value: "Boraks",
+  },
+  {
+    label: "Formalin",
+    value: "Formalin",
+  },
+  {
+    label: "Pewarna",
+    value: "Pewarna",
+  },
+  {
+    label: "Pemanis",
+    value: "Pemanis",
+  },
+  {
+    label: "Coliform",
+    value: "Coliform",
+  },
+  {
+    label: "E. Coli",
+    value: "E. Coli",
+  },
+  {
+    label: "Salmonella",
+    value: "Salmonella",
+  },
+];
 
 const FormServiceApplication = () => {
   const navigate = useNavigate();
@@ -16,7 +100,6 @@ const FormServiceApplication = () => {
     setForm: setFormApplication,
     handleChange,
   } = useForm({
-    date: "",
     name: "",
     address: "",
     phone: "",
@@ -24,31 +107,19 @@ const FormServiceApplication = () => {
     typeSample: "",
     totalSample: "",
     merkSample: "",
+    testParameters: [],
+    costPackage: false,
     fotoSample: [],
   });
 
   const onSubmit = (event) => {
     event.preventDefault();
-    console.log(formApplication);
 
     navigate(`/services/${slug}/paid`);
   };
 
   return (
     <form onSubmit={onSubmit} className="flex flex-col items-center gap-6">
-      <Input
-        radius="sm"
-        size="sm"
-        type="date"
-        placeholder="date"
-        label="Tanggal Permintaan Pengujian"
-        className="w-full"
-        name="date"
-        value={formApplication.date}
-        onChange={handleChange}
-        isRequired
-      />
-
       <Input
         radius="sm"
         size="sm"
@@ -61,7 +132,7 @@ const FormServiceApplication = () => {
         isRequired
       />
 
-      <Input
+      <Textarea
         radius="sm"
         size="sm"
         type="text"
@@ -154,7 +225,42 @@ const FormServiceApplication = () => {
         isRequired
       />
 
-      <div className="flex flex-col w-full gap-4">
+      <CheckboxGroup
+        label="Pilih Parameter Uji"
+        className="w-full"
+        classNames={{
+          label: "font-medium text-foreground",
+          wrapper: "columns-sm grid grid-cols-2 md:grid-cols-3",
+        }}
+        isRequired
+        value={formApplication.testParameters}
+        onValueChange={(params) =>
+          setFormApplication({ ...formApplication, testParameters: params })
+        }
+      >
+        {listTestParameters.map((item, index) => (
+          <Checkbox key={index} value={item.value}>
+            {item.label}
+          </Checkbox>
+        ))}
+      </CheckboxGroup>
+
+      <div className="flex flex-col w-full gap-2">
+        <label htmlFor="#fotoSample" className="font-medium">
+          Biaya Per Paket Untuk UMKM
+        </label>
+
+        <Checkbox
+          isSelected={formApplication.costPackage}
+          onValueChange={(isSelected) =>
+            setFormApplication({ ...formApplication, costPackage: isSelected })
+          }
+        >
+          Lemak, Karbohidrat, Kalori, %AKG, Umur Simpan (Satu Suhu Penyimpanan)
+        </Checkbox>
+      </div>
+
+      <div className="flex flex-col w-full gap-2">
         <label htmlFor="#fotoSample" className="font-medium">
           Unggah Foto Sampel
         </label>
