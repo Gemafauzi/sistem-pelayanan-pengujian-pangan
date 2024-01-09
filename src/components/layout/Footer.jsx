@@ -1,8 +1,8 @@
 import { Image } from "@nextui-org/react";
 import { IoLogoWhatsapp, IoMdMail } from "react-icons/io";
-import logoKAN from "@/assets/logo/kan.png";
-import logoCiptaKarya from "@/assets/logo/pt-cipta-karya-pangan.png";
-import logoUnpas from "@/assets/logo/unpas.png";
+import logoKAN from "../../assets/logo/kan.png";
+import logoCiptaKarya from "../../assets/logo/pt-cipta-karya-pangan.png";
+import logoUnpas from "../../assets/logo/unpas.png";
 
 const Footer = () => {
   return (

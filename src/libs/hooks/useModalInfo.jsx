@@ -1,4 +1,4 @@
-import { useRootContext } from "@/libs/providers/RootProvider";
+import { useRootContext } from "../../libs/providers/RootProvider";
 
 const useModalInfo = (initialValues = "") => {
   const { onOpenModal } = useRootContext();

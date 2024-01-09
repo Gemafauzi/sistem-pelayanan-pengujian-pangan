@@ -1,5 +1,5 @@
-import GalleryService from "@/components/service/GalleryService";
-import DescriptionService from "@/components/service/DescriptionService";
+import GalleryService from "../../components/service/GalleryService";
+import DescriptionService from "../../components/service/DescriptionService";
 
 export default function DetailService() {
   return (

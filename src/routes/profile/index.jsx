@@ -1,8 +1,8 @@
-import DataProfile from "@/components/profile/DataProfile";
-import ProfilePicture from "@/components/profile/ProfilePicture";
-import useForm from "@/libs/hooks/useForm";
+import DataProfile from "../../components/profile/DataProfile";
+import ProfilePicture from "../../components/profile/ProfilePicture";
+import useForm from "../../libs/hooks/useForm";
 import { useState } from "react";
-import useModalInfo from "@/libs/hooks/useModalInfo";
+import useModalInfo from "../../libs/hooks/useModalInfo";
 
 export default function Profile() {
   const { openModal } = useModalInfo();

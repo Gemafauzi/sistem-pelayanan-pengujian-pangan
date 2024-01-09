@@ -1,4 +1,4 @@
-import FormServiceApplication from "@/components/service/FormServiceApplication";
+import FormServiceApplication from "../../components/service/FormServiceApplication";
 
 export default function ServiceApplication() {
   return (

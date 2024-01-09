@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { genders } from "@/libs/data/form";
+import { genders } from "../../libs/data/form";
 import { Button, Input, Select, SelectItem } from "@nextui-org/react";
 import { useMemo } from "react";
 

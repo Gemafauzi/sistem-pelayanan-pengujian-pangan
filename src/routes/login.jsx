@@ -1,6 +1,6 @@
-import logoCiptaKarya from "@/assets/logo/pt-cipta-karya-pangan.png";
-import PasswordInput from "@/components/ui/PasswordInput";
-import useForm from "@/libs/hooks/useForm";
+import logoCiptaKarya from "../assets/logo/pt-cipta-karya-pangan.png";
+import PasswordInput from "../components/ui/PasswordInput";
+import useForm from "../libs/hooks/useForm";
 import { Button, Image, Input, Link } from "@nextui-org/react";
 
 export default function Login() {

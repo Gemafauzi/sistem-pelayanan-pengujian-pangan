@@ -1,5 +1,5 @@
-import logoKAN from "@/assets/logo/kan.png";
-import logoCiptaKarya from "@/assets/logo/pt-cipta-karya-pangan.png";
+import logoKAN from "../../assets/logo/kan.png";
+import logoCiptaKarya from "../../assets/logo/pt-cipta-karya-pangan.png";
 import { Image } from "@nextui-org/react";
 import { Outlet } from "react-router-dom";
 

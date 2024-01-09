@@ -87,7 +87,7 @@ const AuthNav = () => {
               variant="light"
               endContent={<IoChevronDown />}
             >
-              Hi, Herlan{" "}
+              Hi, Rifki Gema{" "}
               <span>
                 <FaUser className="text-3xl text-black" />
               </span>

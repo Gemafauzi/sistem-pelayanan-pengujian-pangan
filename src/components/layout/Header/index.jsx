@@ -18,7 +18,7 @@ import {
 } from "@nextui-org/react";
 import { IoChevronDown } from "react-icons/io5";
 import { useState } from "react";
-import logoCiptaKarya from "@/assets/logo/pt-cipta-karya-pangan.png";
+import logoCiptaKarya from "../../../assets/logo/pt-cipta-karya-pangan.png";
 import AuthNav from "./AuthNav";
 
 export default function Header() {

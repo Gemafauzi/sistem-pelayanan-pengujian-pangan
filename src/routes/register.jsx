@@ -1,7 +1,7 @@
-import logoCiptaKarya from "@/assets/logo/pt-cipta-karya-pangan.png";
-import PasswordInput from "@/components/ui/PasswordInput";
-import { genders } from "@/libs/data/form";
-import useForm from "@/libs/hooks/useForm";
+import logoCiptaKarya from "../assets/logo/pt-cipta-karya-pangan.png";
+import PasswordInput from "../components/ui/PasswordInput";
+import { genders } from "../libs/data/form";
+import useForm from "../libs/hooks/useForm";
 import {
   Button,
   Image,

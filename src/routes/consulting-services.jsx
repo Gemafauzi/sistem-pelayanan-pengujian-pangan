@@ -1,4 +1,4 @@
-import logoWA from "@/assets/logo/whatsapp.png";
+import logoWA from "../assets/logo/whatsapp.png";
 import { Image, Button, Link } from "@nextui-org/react";
 
 export default function ConsultingServices() {
@@ -25,7 +25,7 @@ export default function ConsultingServices() {
           as={Link}
           target="_blank"
           color="primary"
-          href="https://wa.me/6281234567890"
+          href="https://wa.me/6281220686342"
           radius="sm"
         >
           Hubungi Kami
