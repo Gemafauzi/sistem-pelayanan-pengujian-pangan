@@ -2,15 +2,36 @@ import logoCiptaKarya from "../assets/logo/pt-cipta-karya-pangan.png";
 import PasswordInput from "../components/ui/PasswordInput";
 import useForm from "../libs/hooks/useForm";
 import { Button, Image, Input, Link } from "@nextui-org/react";
+import { useNavigate } from 'react-router-dom';
+import { useEffect } from "react";
+
 
 export default function Login() {
+  const navigate = useNavigate();
+
   const { form: formLogin, handleChange } = useForm({
     email: "",
     password: "",
   });
 
+  useEffect(() => {
+    const user =JSON.parse(localStorage.getItem('user'));
+    if (user) {
+     navigate('/');
+     window.location.href = "/";
+    }
+   }, []);
+
   const onSubmit = (event) => {
     event.preventDefault();
+
+    if (formLogin.email == "admin@email.test" && formLogin.password == "admin") {      
+      localStorage.setItem('user', JSON.stringify({
+        ...formLogin,
+        login : true,
+      }));
+      navigate('/');
+    }
     console.log(formLogin);
   };
 

@@ -10,8 +10,11 @@ import {
 } from "@nextui-org/react";
 import { IoChevronDown } from "react-icons/io5";
 import { FaUser } from "react-icons/fa";
+import {useState, useEffect} from 'react'
+import { useNavigate } from 'react-router-dom';
 
 const AuthNavNotLogin = () => {
+
   return (
     <NavbarContent justify="end">
       <NavbarItem>
@@ -65,13 +68,26 @@ const navProfile = [
 ];
 
 const AuthNav = () => {
-  const isLogin = true;
+  const navigate = useNavigate();
+  const [isLogin, setIsLogin] = useState(false);
 
-  if (!isLogin) {
-    return <AuthNavNotLogin />;
-  }
+  useEffect(() => {
+    const user = JSON.parse(localStorage.getItem('user'));
+    if (user) {
+      setIsLogin(user.login);
+    }
+    console.log(isLogin);
+   }, [isLogin]);
 
-  return (
+   const logOut = ()=> {
+    setIsLogin(false);
+    localStorage.removeItem('user');
+    navigate('/login');
+   }
+
+  return ( 
+    <div>
+    {isLogin ? 
     <NavbarContent justify="end">
       <Dropdown
         classNames={{
@@ -113,12 +129,13 @@ const AuthNav = () => {
             </DropdownItem>
           ))}
 
-          <DropdownItem aria-current="logout" color="danger" variant="flat">
+          <DropdownItem aria-current="logout" color="danger" variant="flat" onClick={logOut}>
             Keluar
           </DropdownItem>
         </DropdownMenu>
       </Dropdown>
-    </NavbarContent>
+    </NavbarContent> : <AuthNavNotLogin />}
+    </div>
   );
 };
 
